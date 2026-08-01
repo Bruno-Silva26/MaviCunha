@@ -1,0 +1,45 @@
+/* Design tokens da campanha. Mexa aqui para mudar cor, ritmo e tipografia do site inteiro. */
+:root {
+  /* cores */
+  --amarelo: #FFD400;
+  --amarelo-claro: #FFE04D;
+  --preto: #0A0A0A;
+  --creme: #F4F1EA;
+  --branco: #FFFFFF;
+
+  --texto: #F4F1EA;
+  --texto-suave: rgba(244, 241, 234, .72);
+  --texto-fraco: rgba(244, 241, 234, .55);
+  --texto-tenue: rgba(244, 241, 234, .42);
+  --linha: rgba(255, 255, 255, .09);
+
+  --vidro: rgba(255, 255, 255, .045);
+  --vidro-forte: linear-gradient(160deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .01));
+
+  /* layout */
+  --max: 1440px;
+  --pad: 24px;
+  --secao: 120px;
+
+  /* raios */
+  --raio-g: 40px;
+  --raio-m: 26px;
+  --raio-p: 18px;
+  --raio-pill: 999px;
+
+  /* tipografia */
+  --fonte: 'Archivo', system-ui, -apple-system, sans-serif;
+  --fonte-titulo: 'Archivo Black', 'Archivo', sans-serif;
+
+  /* movimento */
+  --transicao: .2s ease;
+  --mola: cubic-bezier(.2, .7, .3, 1);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --secao: 84px;
+    --raio-g: 28px;
+    --pad: 18px;
+  }
+}
