@@ -6,7 +6,6 @@ import type {
   Candidata,
   Links,
   MenuItem,
-  Proposta,
   Rede,
   Rodape,
   SiteMeta,
@@ -49,6 +48,7 @@ export const links: Links = {
 }
 
 export const menu: MenuItem[] = [
+  { rotulo: 'Eventos', href: '#eventos' },
   { rotulo: 'Quem é', href: '#quem' },
   { rotulo: 'Propostas', href: '#propostas' },
   { rotulo: 'A Missão', href: '#missao' },
@@ -65,18 +65,14 @@ export const marquee: string[] = [
   'Missão 14'
 ]
 
-export const hero = {
-  selo: 'Candidata 2026',
-  ctaPrimario: 'Apoiar a campanha',
-  ctaSecundario: 'Ver as propostas'
-}
-
 export const sobre = {
   eyebrow: 'Quem é ela',
   titulo: ['quem é Mavi Cunha?'],
   paragrafos: [
-    'Texto provisório para o layout. Aqui entra a história dela: de onde veio, o que faz, o que a trouxe para a política e por que decidiu disputar uma vaga na Câmara dos Deputados por Mato Grosso do Sul.',
-    'Um segundo parágrafo com a virada: o incômodo que virou ação e o compromisso que ela assume com quem confiar o voto.'
+    'Nascida e criada na cidade de Campo Grande, filha de doméstica, sempre sonhei em mudar a realidade do Brasil. Iniciei minha vida ativista com apenas 13 anos, já sofri diversos ataques, físicos e morais.',
+    'Com apenas 20 anos aceitei o desafio de me candidatar a um cargo federal, não poderia ter feito uma escolha melhor. A ânsia de ver a atual situação do Brasil e não fazer nada pra mudar não faz parte de mim.',
+    'Curso duas faculdades, Direito e Ciências Sociais. Um desafio e tanto, até porque trabalho e ainda faço algumas atividades físicas. Mas eu amo essa correria, faz parte de quem sou.',
+    'Vamos mudar o Brasil.'
   ],
   destaque: 'O futuro é glorioso.'
 }
@@ -91,14 +87,14 @@ export const propostasSecao = {
   eyebrow: 'Bandeiras',
   titulo: 'A luta que carrego comigo',
   intro:
-    'Texto provisório: compromissos concretos, sem rodeio e sem promessa vazia. Cada um vira projeto, emenda ou voto na Câmara.'
+    'Compromissos concretos, sem rodeio e sem promessa vazia. Cada um vira projeto, emenda ou voto na Câmara.'
 }
 
-export const propostas: Proposta[] = [
-  { titulo: 'Segurança para viver em paz', texto: 'Texto provisório da proposta. Explicação curta do problema e da solução defendida.' },
-  { titulo: 'Defesa da mulher', texto: 'Texto provisório da proposta. Explicação curta do problema e da solução defendida.' },
-  { titulo: 'Menos imposto, mais emprego', texto: 'Texto provisório da proposta. Explicação curta do problema e da solução defendida.' }
-]
+export const eventosSecao = {
+  eyebrow: 'Agenda',
+  titulo: 'Vamos estar juntos',
+  intro: 'Encontros, caminhadas e conversas pelo estado. Confira o próximo e os que vêm depois dele.'
+}
 
 export const missao = {
   titulo: 'Quer saber mais? Conheça o Livro Amarelo',
@@ -126,7 +122,7 @@ export const grupo = {
   eyebrow: 'Grupos de WhatsApp',
   titulo: 'Entre no grupo e faça parte',
   texto:
-    'Texto provisório: é no grupo que a campanha acontece. Avisos, agenda, material para divulgar e conversa direta com a equipe.',
+    'É no grupo que a campanha acontece. Avisos, agenda, material para divulgar e conversa direta com a equipe.',
   cta: 'Entrar no grupo do WhatsApp'
 }
 

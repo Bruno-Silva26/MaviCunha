@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { propostas, propostasSecao } = useSiteContent()
+const { propostasSecao } = useSiteContent()
+const { propostas } = await useCandidateData()
 
 const numero = (i: number) => String(i + 1).padStart(2, '0')
 </script>
@@ -16,10 +17,10 @@ const numero = (i: number) => String(i + 1).padStart(2, '0')
       />
 
       <ul class="propostas__lista">
-        <li v-for="(proposta, i) in propostas" :key="proposta.titulo" class="card">
+        <li v-for="(proposta, i) in propostas" :key="proposta.id" class="card">
           <p class="card__numero">{{ numero(i) }}</p>
           <h3 class="card__titulo">{{ proposta.titulo }}</h3>
-          <p class="card__texto">{{ proposta.texto }}</p>
+          <p class="card__texto">{{ proposta.descricao }}</p>
         </li>
       </ul>
     </div>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import foto from '~/assets/images/foto-hero.png'
+import fotoPadrao from '~/assets/images/foto-hero.png'
 
-const { candidata, hero } = useSiteContent()
+const { candidata } = useSiteContent()
+const { candidate } = await useCandidateData()
 const { area, brilho } = usePointerGlow()
 </script>
 
@@ -10,33 +11,33 @@ const { area, brilho } = usePointerGlow()
     <div ref="brilho" class="hero__cursor" aria-hidden="true" />
     <div class="hero__halo" aria-hidden="true" />
 
-    <div class="hero__grade">
+    <div v-if="candidate" class="hero__grade">
       <div class="hero__texto">
         <p class="selo">
-          {{ hero.selo }}
-          <span class="selo__numero">{{ candidata.partido.replace('Partido ', '') }} {{ candidata.numero }}</span>
+          {{ candidate.badge_1 }}
+          <span class="selo__numero">{{ candidate.badge_2 }}</span>
         </p>
 
         <h1 class="hero__titulo">
-          {{ candidata.primeiroNome }}<br><span>{{ candidata.sobrenome }}</span>
+          {{ candidate.titulo_1 }}<br><span>{{ candidate.titulo_2 }}</span>
         </h1>
 
         <div class="hero__cargo">
           <span class="hero__risco" />
-          <p>{{ candidata.cargo }} · {{ candidata.local }}</p>
+          <p>{{ candidate.subtitulo }}</p>
         </div>
 
-        <p class="hero__slogan">{{ candidata.slogan }}</p>
+        <p class="hero__slogan">{{ candidate.descricao }}</p>
 
         <div class="hero__botoes">
-          <BaseButton href="#apoie" variante="solido" seta>{{ hero.ctaPrimario }}</BaseButton>
-          <BaseButton href="#propostas" variante="linha">{{ hero.ctaSecundario }}</BaseButton>
+          <BaseButton :href="candidate.botao_1_link ?? '#'" variante="solido" seta>{{ candidate.botao_1_texto }}</BaseButton>
+          <BaseButton :href="candidate.botao_2_link ?? '#'" variante="linha">{{ candidate.botao_2_texto }}</BaseButton>
         </div>
       </div>
 
       <div class="hero__foto">
         <div class="hero__brilhoFoto" aria-hidden="true" />
-        <img :src="foto" :alt="candidata.nome" width="1200" height="1800" fetchpriority="high">
+        <img :src="candidate.imagem_url ?? fotoPadrao" :alt="candidata.nome" width="1200" height="1800" fetchpriority="high">
       </div>
     </div>
   </section>

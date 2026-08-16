@@ -29,11 +29,6 @@ export interface Valor {
   texto: string
 }
 
-export interface Proposta {
-  titulo: string
-  texto: string
-}
-
 export interface Rede {
   sigla: string
   nome: string

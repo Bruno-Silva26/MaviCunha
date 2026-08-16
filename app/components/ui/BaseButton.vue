@@ -5,6 +5,7 @@
  */
 type Variante = 'solido' | 'linha' | 'contorno' | 'inverso'
 type Tamanho = 'sm' | 'md' | 'lg' | 'xl'
+type TipoBotao = 'button' | 'submit'
 
 const props = withDefaults(
   defineProps<{
@@ -14,8 +15,9 @@ const props = withDefaults(
     externo?: boolean
     seta?: boolean
     caixaAlta?: boolean
+    tipo?: TipoBotao
   }>(),
-  { variante: 'solido', tamanho: 'md', externo: false, seta: false, caixaAlta: false }
+  { variante: 'solido', tamanho: 'md', externo: false, seta: false, caixaAlta: false, tipo: 'button' }
 )
 
 const tag = computed(() => (props.href ? 'a' : 'button'))
@@ -23,7 +25,7 @@ const tag = computed(() => (props.href ? 'a' : 'button'))
 const atributos = computed(() =>
   props.href
     ? { href: props.href, ...(props.externo ? { target: '_blank', rel: 'noopener' } : {}) }
-    : { type: 'button' as const }
+    : { type: props.tipo }
 )
 </script>
 
