@@ -45,7 +45,7 @@ const ano = new Date().getFullYear()
 <style scoped>
 .rodape {
   border-top: 1px solid rgba(255, 255, 255, .08);
-  background: linear-gradient(180deg, rgba(255, 212, 0, .05), transparent 40%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--destaque-bg) 5%, transparent), transparent 40%);
 }
 
 .rodape__grade {
@@ -65,7 +65,7 @@ const ano = new Date().getFullYear()
 
 .coluna { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .coluna a:not(.btn) { font-size: 15px; color: var(--texto-suave); }
-.coluna a:not(.btn):hover { color: var(--amarelo); }
+.coluna a:not(.btn):hover { color: var(--destaque); }
 .coluna__titulo {
   margin-bottom: 6px;
   font-size: 11px;
@@ -89,5 +89,5 @@ const ano = new Date().getFullYear()
 .rodape__base p { color: var(--texto-tenue); }
 .rodape__legais { display: flex; flex-wrap: wrap; gap: 24px; }
 .rodape__legais a { color: var(--texto-tenue); }
-.rodape__legais a:hover { color: var(--amarelo); }
+.rodape__legais a:hover { color: var(--destaque); }
 </style>

@@ -10,6 +10,7 @@ export interface Candidata {
   local: string
   slogan: string
   email: string
+  cnpj: string
 }
 
 export interface SiteMeta {
@@ -57,4 +58,10 @@ export interface Links {
   twitter: string
   facebook: string
   livroAmarelo: string
+}
+
+export interface Campanha {
+  tarja: string
+  numero: string
+  chamada: string
 }

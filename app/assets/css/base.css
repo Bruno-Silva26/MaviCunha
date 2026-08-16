@@ -30,7 +30,7 @@ ul, ol {
 }
 
 a {
-  color: var(--amarelo);
+  color: var(--destaque);
   text-decoration: none;
 }
 
@@ -51,12 +51,12 @@ button {
 }
 
 ::selection {
-  background: var(--amarelo);
-  color: var(--preto);
+  background: var(--destaque-bg);
+  color: var(--tinta-sobre-destaque);
 }
 
 :focus-visible {
-  outline: 2px solid var(--amarelo);
+  outline: 2px solid var(--destaque);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -74,6 +74,26 @@ button {
 @keyframes breathe {
   0%, 100% { opacity: .5; transform: scale(1); }
   50% { opacity: .85; transform: scale(1.08); }
+}
+
+/* ---- o bote da onça: garras que cruzam a tela na ativação do modo felina ---- */
+@keyframes garra {
+  0% { transform: rotate(var(--r)) scaleX(0); opacity: 0; }
+  10% { opacity: 1; }
+  38% { transform: rotate(var(--r)) scaleX(1); opacity: 1; }
+  100% { transform: rotate(var(--r)) scaleX(1); opacity: 0; }
+}
+@keyframes clarao {
+  0% { opacity: 0; }
+  18% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes tremor {
+  0%, 100% { transform: none; }
+  12% { transform: translate3d(-9px, 3px, 0); }
+  28% { transform: translate3d(7px, -4px, 0); }
+  46% { transform: translate3d(-5px, -2px, 0); }
+  68% { transform: translate3d(3px, 2px, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {

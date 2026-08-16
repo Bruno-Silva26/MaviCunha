@@ -3,6 +3,7 @@
  * Nenhum componente deve conter texto editorial solto.
  */
 import type {
+  Campanha,
   Candidata,
   Links,
   MenuItem,
@@ -24,13 +25,14 @@ export const candidata: Candidata = {
   nome: 'Mavi Cunha',
   primeiroNome: 'Mavi',
   sobrenome: 'Cunha',
-  numero: '14',
+  numero: '1400',
   partido: 'Partido Missão',
   cargo: 'Deputada Federal',
   local: 'Campo Grande / MS',
   slogan:
     'Coragem para enfrentar o que ninguém quer enfrentar. Uma nova geração disposta a devolver Mato Grosso do Sul às mãos de quem trabalha.',
-  email: 'contato@mavicunha.com.br'
+  email: 'contato@mavicunha.com.br',
+  cnpj: '68.499.681/0001-18'
 }
 
 // Links limpos de parâmetros de rastreio (fbclid, _t, _r…): eles vêm do app onde o
@@ -48,13 +50,21 @@ export const links: Links = {
 }
 
 export const menu: MenuItem[] = [
-  { rotulo: 'Eventos', href: '#eventos' },
   { rotulo: 'Quem é', href: '#quem' },
   { rotulo: 'Propostas', href: '#propostas' },
   { rotulo: 'A Missão', href: '#missao' },
+  { rotulo: '1400', href: '#vote' },
+  { rotulo: 'Agenda', href: '#eventos' },
   { rotulo: 'Vaquinha', href: '#apoie' },
   { rotulo: 'Redes', href: '#redes' }
 ]
+
+// Seção de campanha — só publicar quando a divulgação do número estiver liberada.
+export const campanha: Campanha = {
+  tarja: 'Campanha 2026 · Deputada Federal',
+  numero: '1400',
+  chamada: 'Esse é o número dela na urna. Digite 1400, confirme e ajude a levar a Missão para Brasília.'
+}
 
 export const marquee: string[] = [
   'O futuro é glorioso',
@@ -133,8 +143,8 @@ export const redesSecao = {
 }
 
 export const redes: Rede[] = [
-  { sigla: 'IG', nome: 'Instagram', handle: '@mavicunha', href: links.instagram },
-  { sigla: 'TT', nome: 'TikTok', handle: '@mavicunha', href: links.tiktok },
+  { sigla: 'IG', nome: 'Instagram', handle: '@mavicunhaaa', href: links.instagram },
+  { sigla: 'TT', nome: 'TikTok', handle: '@mavicunhaaa._', href: links.tiktok },
   { sigla: 'WA', nome: 'WhatsApp', handle: 'Grupo de apoio', href: links.whatsappDireto, destaque: true }
 ]
 

@@ -40,6 +40,7 @@ useHead({
 
 <template>
   <HeroSection />
+  <VoteSection />
   <EventsSection />
   <MarqueeBar />
   <AboutSection />

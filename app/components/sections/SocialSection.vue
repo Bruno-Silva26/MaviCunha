@@ -61,12 +61,12 @@ const { redes, redesSecao } = useSiteContent()
     border-color var(--transicao), transform var(--transicao);
 }
 .rede:hover {
-  background: var(--amarelo);
-  color: var(--preto);
-  border-color: var(--amarelo);
+  background: var(--destaque-bg);
+  color: var(--tinta-sobre-destaque);
+  border-color: var(--destaque-bg);
   transform: translateY(-3px);
 }
-.rede--destaque { border-color: rgba(255, 212, 0, .35); background: rgba(255, 212, 0, .08); }
+.rede--destaque { border-color: color-mix(in srgb, var(--destaque-bg) 35%, transparent); background: color-mix(in srgb, var(--destaque-bg) 8%, transparent); }
 
 .rede__sigla {
   display: grid;
@@ -75,15 +75,35 @@ const { redes, redesSecao } = useSiteContent()
   height: 48px;
   flex: none;
   border-radius: 16px;
-  background: rgba(255, 212, 0, .16);
-  color: var(--amarelo);
+  background: color-mix(in srgb, var(--destaque-bg) 16%, transparent);
+  color: var(--destaque);
   font-family: var(--fonte-titulo);
   font-size: 18px;
 }
-.rede:hover .rede__sigla { background: rgba(10, 10, 10, .1); color: var(--preto); }
+.rede:hover .rede__sigla { background: color-mix(in srgb, var(--tinta-sobre-destaque) 10%, transparent); color: var(--tinta-sobre-destaque); }
 
 .rede__info { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
 .rede__nome { font-family: var(--fonte-titulo); font-size: 18px; }
 .rede__handle { font-size: 14.5px; opacity: .6; }
 .rede__seta { font-size: 20px; opacity: .5; }
+
+/* modo felina: os cards de redes já nascem rosa, com sigla e texto em branco */
+.site[data-felina='1'] .rede {
+  background: var(--destaque-bg);
+  color: var(--tinta-sobre-destaque);
+  border-color: var(--destaque-bg);
+}
+.site[data-felina='1'] .rede__sigla {
+  background: color-mix(in srgb, var(--tinta-sobre-destaque) 18%, transparent);
+  color: var(--tinta-sobre-destaque);
+}
+.site[data-felina='1'] .rede:hover {
+  background: var(--inv-bg);
+  color: var(--inv-tinta);
+  border-color: var(--inv-bg);
+}
+.site[data-felina='1'] .rede:hover .rede__sigla {
+  background: color-mix(in srgb, var(--inv-tinta) 12%, transparent);
+  color: var(--inv-tinta);
+}
 </style>

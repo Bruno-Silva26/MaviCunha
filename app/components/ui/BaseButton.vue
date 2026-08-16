@@ -66,21 +66,21 @@ const atributos = computed(() =>
 .btn--caixa-alta { letter-spacing: .12em; text-transform: uppercase; }
 
 /* ---- variantes ---- */
-.btn--solido { background: var(--amarelo); color: var(--preto); }
-.btn--solido:hover { background: var(--branco); color: var(--preto); }
+.btn--solido { background: var(--destaque-bg); color: var(--tinta-sobre-destaque); }
+.btn--solido:hover { background: var(--inv-bg); color: var(--inv-tinta); }
 .btn--solido:not(.btn--sm):hover { transform: translateY(-2px); }
 
 .btn--linha { border-color: rgba(244, 241, 234, .24); color: var(--texto); }
-.btn--linha:hover { border-color: var(--amarelo); color: var(--amarelo); }
+.btn--linha:hover { border-color: var(--destaque); color: var(--destaque); }
 
-.btn--contorno { border-color: rgba(255, 212, 0, .55); color: var(--amarelo); }
-.btn--contorno:hover { background: var(--amarelo); color: var(--preto); }
+.btn--contorno { border-color: color-mix(in srgb, var(--destaque-bg) 55%, transparent); color: var(--destaque); }
+.btn--contorno:hover { background: var(--destaque-bg); color: var(--tinta-sobre-destaque); }
 
-.btn--inverso { background: var(--preto); color: var(--amarelo); }
+.btn--inverso { background: var(--superficie); color: var(--destaque); }
 .btn--inverso:hover {
-  background: var(--amarelo);
-  color: var(--preto);
-  box-shadow: inset 0 0 0 1.5px var(--preto);
+  background: var(--inv-bg);
+  color: var(--inv-tinta);
+  box-shadow: inset 0 0 0 1.5px var(--superficie);
 }
 
 .btn__seta { transition: transform var(--transicao); }

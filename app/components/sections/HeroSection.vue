@@ -58,7 +58,7 @@ const { area, brilho } = usePointerGlow()
   height: 620px;
   margin: -310px 0 0 -310px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 212, 0, .42), rgba(255, 212, 0, .12) 42%, transparent 68%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--destaque-bg) 42%, transparent), color-mix(in srgb, var(--destaque-bg) 12%, transparent) 42%, transparent 68%);
   filter: blur(60px);
   opacity: 0;
   transition: opacity .5s ease;
@@ -73,7 +73,7 @@ const { area, brilho } = usePointerGlow()
   width: 900px;
   height: 520px;
   transform: translateX(-50%);
-  background: radial-gradient(closest-side, rgba(255, 212, 0, .14), transparent);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--destaque-bg) 14%, transparent), transparent);
   filter: blur(20px);
   pointer-events: none;
   animation: breathe 9s ease-in-out infinite;
@@ -101,19 +101,19 @@ const { area, brilho } = usePointerGlow()
   gap: 10px;
   padding: 9px 8px 9px 16px;
   border-radius: var(--raio-pill);
-  border: 1px solid rgba(255, 212, 0, .35);
-  background: rgba(255, 212, 0, .06);
+  border: 1px solid color-mix(in srgb, var(--destaque-bg) 35%, transparent);
+  background: color-mix(in srgb, var(--destaque-bg) 6%, transparent);
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--amarelo);
+  color: var(--destaque);
 }
 .selo__numero {
   padding: 5px 12px;
   border-radius: var(--raio-pill);
-  background: var(--amarelo);
-  color: var(--preto);
+  background: var(--destaque-bg);
+  color: var(--tinta-sobre-destaque);
   letter-spacing: .12em;
 }
 
@@ -124,7 +124,7 @@ const { area, brilho } = usePointerGlow()
   line-height: .88;
   letter-spacing: -.04em;
 }
-.hero__titulo span { color: var(--amarelo); }
+.hero__titulo span { color: var(--destaque); }
 
 .hero__cargo { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
 .hero__cargo p {
@@ -134,7 +134,7 @@ const { area, brilho } = usePointerGlow()
   text-transform: uppercase;
   color: rgba(244, 241, 234, .8);
 }
-.hero__risco { width: 44px; height: 2px; border-radius: 2px; background: rgba(255, 212, 0, .7); }
+.hero__risco { width: 44px; height: 2px; border-radius: 2px; background: color-mix(in srgb, var(--destaque-bg) 70%, transparent); }
 
 .hero__slogan {
   margin-top: 26px;
@@ -169,8 +169,13 @@ const { area, brilho } = usePointerGlow()
   height: 82%;
   transform: translateX(-50%);
   border-radius: 999px 999px 260px 260px;
-  background: radial-gradient(60% 60% at 50% 45%, rgba(255, 212, 0, .28), rgba(255, 212, 0, .06) 60%, transparent 78%);
+  background: radial-gradient(60% 60% at 50% 45%, color-mix(in srgb, var(--destaque-bg) 28%, transparent), color-mix(in srgb, var(--destaque-bg) 6%, transparent) 60%, transparent 78%);
   filter: blur(6px);
+}
+/* no modo felina o fundo da página já é claro/quente — a mesma opacidade pensada
+   para contrastar com o preto fica lavada, então o rosa aqui entra mais forte */
+.site[data-felina='1'] .hero__brilhoFoto {
+  background: radial-gradient(60% 60% at 50% 45%, color-mix(in srgb, var(--destaque-bg) 55%, transparent), color-mix(in srgb, var(--destaque-bg) 18%, transparent) 60%, transparent 78%);
 }
 
 @media (max-width: 720px) {

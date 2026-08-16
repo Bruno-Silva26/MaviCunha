@@ -47,8 +47,10 @@ const { doacao, links } = useSiteContent()
   margin-inline: auto;
   border-radius: var(--raio-g);
   overflow: hidden;
-  background: var(--creme);
-  color: var(--preto);
+  /* tinta própria do painel: não segue --superficie/--texto (a página troca pra
+     amarelo/branco no modo felina), fica sempre um cartão claro com tinta escura */
+  background: var(--painel-vaquinha-tinta);
+  color: var(--painel-vaquinha-bg);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
 }
@@ -73,14 +75,18 @@ const { doacao, links } = useSiteContent()
 .chip {
   padding: 14px 28px;
   border-radius: var(--raio-pill);
-  background: var(--preto);
-  color: var(--amarelo);
+  background: var(--painel-vaquinha-bg);
+  color: var(--destaque);
   font-family: var(--fonte-titulo);
   font-size: 19px;
 }
-.chip--vazio { background: none; color: var(--preto); border: 1.5px solid rgba(10, 10, 10, .25); }
+.chip--vazio { background: none; color: var(--painel-vaquinha-bg); border: 1.5px solid color-mix(in srgb, var(--painel-vaquinha-bg) 25%, transparent); }
 
 .apoie__btn { margin-top: 34px; }
+/* o botão "inverso" usa --superficie (a página, que vira amarelo no felina); aqui
+   ele precisa ficar preso à tinta escura do próprio painel, não à da página */
+.apoie__btn.btn--inverso { background: var(--painel-vaquinha-bg); color: var(--destaque); }
+.apoie__btn.btn--inverso:hover { background: var(--inv-bg); color: var(--inv-tinta); box-shadow: inset 0 0 0 1.5px var(--painel-vaquinha-bg); }
 
 .apoie__imagem {
   position: relative;
@@ -88,7 +94,7 @@ const { doacao, links } = useSiteContent()
   place-items: center;
   min-height: 680px;
   padding: 16px;
-  background: radial-gradient(70% 60% at 50% 45%, rgba(255, 212, 0, .35), rgba(255, 212, 0, 0) 72%);
+  background: radial-gradient(70% 60% at 50% 45%, color-mix(in srgb, var(--destaque-bg) 35%, transparent), transparent 72%);
 }
 .apoie__imagem img {
   display: block;
@@ -96,7 +102,7 @@ const { doacao, links } = useSiteContent()
   max-width: none;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 24px 40px rgba(10, 10, 10, .22));
+  filter: drop-shadow(0 24px 40px color-mix(in srgb, var(--painel-vaquinha-bg) 22%, transparent));
 }
 
 @media (max-width: 720px) {

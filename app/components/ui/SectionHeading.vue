@@ -62,10 +62,12 @@ withDefaults(
 .cabecalho--coluna .cabecalho__intro { margin-top: 22px; max-width: 56ch; }
 
 /* tons */
-.cabecalho--claro .cabecalho__eyebrow { color: var(--amarelo); }
+.cabecalho--claro .cabecalho__eyebrow { color: var(--destaque); }
 .cabecalho--claro .cabecalho__intro { color: var(--texto-fraco); }
 
-.cabecalho--escuro { color: var(--preto); }
+/* "escuro" não fixa uma cor própria: herda do painel que a envolve
+   (Bandeiras e Vaquinha têm fundos com comportamentos diferentes no modo felina). */
+.cabecalho--escuro { color: inherit; }
 .cabecalho--escuro .cabecalho__eyebrow { opacity: .65; }
 .cabecalho--escuro .cabecalho__intro { font-weight: 600; opacity: .78; }
 </style>

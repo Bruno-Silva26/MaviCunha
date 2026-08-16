@@ -52,14 +52,14 @@ const { candidata, links, missao } = useSiteContent()
   background: var(--vidro);
   font-size: 16.5px;
   font-weight: 600;
-  color: rgba(244, 241, 234, .85);
+  color: var(--texto-suave);
 }
 .pilares__ponto {
   width: 7px;
   height: 7px;
   flex: none;
   border-radius: 50%;
-  background: var(--amarelo);
+  background: var(--destaque-bg);
 }
 
 .missao__btn { margin-top: 34px; }

@@ -13,7 +13,7 @@ const { candidata } = useSiteContent()
     <h1 class="erro__titulo">Essa página saiu de campanha</h1>
     <p class="erro__texto">
       O link não existe ou foi movido. Volte para a página principal e continue com a
-      {{ candidata.nome }} {{ candidata.numero }}.
+      {{ candidata.nome }}.
     </p>
     <BaseButton href="/" variante="solido" seta @click.prevent="clearError({ redirect: '/' })">
       Voltar para o início

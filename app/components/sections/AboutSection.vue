@@ -59,8 +59,8 @@ const { candidata, sobre, valores } = useSiteContent()
   gap: 10px;
   padding: 12px 18px 12px 12px;
   border-radius: var(--raio-pill);
-  background: var(--amarelo);
-  color: var(--preto);
+  background: var(--destaque-bg);
+  color: var(--tinta-sobre-destaque);
   box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
   font-size: 12px;
   font-weight: 800;
@@ -70,17 +70,18 @@ const { candidata, sobre, valores } = useSiteContent()
 .quem__selo-numero {
   display: grid;
   place-items: center;
-  width: 30px;
+  min-width: 30px;
   height: 30px;
-  border-radius: 50%;
-  background: var(--preto);
-  color: var(--amarelo);
+  padding-inline: 8px;
+  border-radius: var(--raio-pill);
+  background: var(--superficie);
+  color: var(--destaque-bg);
   font-family: var(--fonte-titulo);
   font-size: 13px;
 }
 
 .quem__paragrafo { margin-top: 18px; max-width: 60ch; }
-.quem__destaque { color: var(--amarelo); }
+.quem__destaque { color: var(--destaque); }
 
 .valores {
   margin-top: 46px;
@@ -95,9 +96,9 @@ const { candidata, sobre, valores } = useSiteContent()
   background: var(--vidro-forte);
   transition: border-color var(--transicao), transform var(--transicao);
 }
-.valores__item:hover { border-color: rgba(255, 212, 0, .5); transform: translateY(-3px); }
-.valores__titulo { font-family: var(--fonte-titulo); font-size: 16px; color: var(--amarelo); }
-.valores__texto { margin-top: 10px; font-size: 15px; line-height: 1.55; color: rgba(244, 241, 234, .6); }
+.valores__item:hover { border-color: color-mix(in srgb, var(--destaque-bg) 50%, transparent); transform: translateY(-3px); }
+.valores__titulo { font-family: var(--fonte-titulo); font-size: 16px; color: var(--destaque); }
+.valores__texto { margin-top: 10px; font-size: 15px; line-height: 1.55; color: var(--texto-fraco); }
 
 @media (max-width: 720px) {
   .quem__foto img { height: 400px; }

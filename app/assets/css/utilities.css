@@ -22,7 +22,7 @@
   font-weight: 800;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--amarelo);
+  color: var(--destaque);
 }
 
 .titulo {

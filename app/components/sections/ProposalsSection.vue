@@ -35,9 +35,12 @@ const numero = (i: number) => String(i + 1).padStart(2, '0')
   margin-inline: auto;
   padding: 80px 56px 72px;
   border-radius: var(--raio-g);
-  background: radial-gradient(120% 100% at 0% 0%, var(--amarelo-claro), var(--amarelo) 55%);
+  background: var(--painel-bandeiras);
   color: var(--preto);
+  transition: color .3s ease;
 }
+/* modo felina: o painel vira preto, então a tinta precisa virar clara */
+.site[data-felina='1'] .propostas__painel { color: var(--texto); }
 
 .propostas__lista {
   margin-top: 56px;
@@ -48,16 +51,17 @@ const numero = (i: number) => String(i + 1).padStart(2, '0')
 
 .card {
   /* min-height dá presença aos cards quando são poucos: o número fica no topo
-     e o texto é empurrado para a base, preenchendo a altura sem esticar a fonte. */
+     e o texto é empurrado para a base, preenchendo a altura sem esticar a fonte.
+     O tingimento usa currentColor: escuro sobre o painel amarelo, claro sobre o preto do modo felina. */
   display: flex;
   flex-direction: column;
   min-height: 320px;
   padding: 40px 36px 44px;
   border-radius: var(--raio-m);
-  background: rgba(10, 10, 10, .055);
+  background: color-mix(in srgb, currentColor 6%, transparent);
   transition: background .25s ease, color .25s ease;
 }
-.card:hover { background: var(--preto); color: var(--amarelo); }
+.card:hover { background: var(--tinta-sobre-destaque); color: var(--destaque-bg); }
 
 .card__numero {
   font-family: var(--fonte-titulo);

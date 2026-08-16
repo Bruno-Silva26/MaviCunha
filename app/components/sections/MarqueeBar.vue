@@ -20,8 +20,8 @@ const { marquee } = useSiteContent()
 .faixa {
   position: relative;
   padding-block: 10px;
-  background: rgba(255, 255, 255, .03);
-  border-block: 1px solid rgba(255, 212, 0, .14);
+  background: var(--faixa-bg);
+  border-block: 1px solid color-mix(in srgb, var(--destaque-bg) 14%, transparent);
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
@@ -45,7 +45,7 @@ const { marquee } = useSiteContent()
   letter-spacing: .32em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: var(--texto-fraco);
+  color: var(--faixa-tinta);
 }
-.faixa__barra { color: var(--amarelo); }
+.faixa__barra { color: var(--destaque); }
 </style>

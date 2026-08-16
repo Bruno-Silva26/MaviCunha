@@ -34,8 +34,8 @@ const { grupo, links } = useSiteContent()
   margin-inline: auto;
   padding: 96px 40px;
   border-radius: var(--raio-g);
-  border: 1px solid rgba(255, 212, 0, .22);
-  background: radial-gradient(90% 130% at 50% 0%, rgba(255, 212, 0, .16), rgba(255, 255, 255, .02));
+  border: 1px solid color-mix(in srgb, var(--destaque-bg) 22%, transparent);
+  background: radial-gradient(90% 130% at 50% 0%, color-mix(in srgb, var(--destaque-bg) 16%, transparent), rgba(255, 255, 255, .02));
   text-align: center;
 }
 
@@ -53,7 +53,7 @@ const { grupo, links } = useSiteContent()
   max-width: 56ch;
   font-size: 19px;
   line-height: 1.65;
-  color: rgba(244, 241, 234, .68);
+  color: var(--texto-suave);
   text-wrap: pretty;
 }
 .grupo__btn { margin-top: 40px; }
