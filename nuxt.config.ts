@@ -38,7 +38,9 @@ export default defineNuxtConfig({
   // Disponível no client via useRuntimeConfig().public.siteUrl
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://mavicunha.com.br'
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://mavicunha.com.br',
+      supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL || '',
+      supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY || ''
     }
   },
 
