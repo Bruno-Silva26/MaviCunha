@@ -87,7 +87,7 @@ export const propostasSecao = {
   eyebrow: 'Bandeiras',
   titulo: 'A luta que carrego comigo',
   intro:
-    'Texto provisório: compromissos concretos, sem rodeio e sem promessa vazia. Cada um vira projeto, emenda ou voto na Câmara.'
+    'Compromissos concretos, sem rodeio e sem promessa vazia. Cada um vira projeto, emenda ou voto na Câmara.'
 }
 
 export const eventosSecao = {
@@ -122,7 +122,7 @@ export const grupo = {
   eyebrow: 'Grupos de WhatsApp',
   titulo: 'Entre no grupo e faça parte',
   texto:
-    'Texto provisório: é no grupo que a campanha acontece. Avisos, agenda, material para divulgar e conversa direta com a equipe.',
+    'É no grupo que a campanha acontece. Avisos, agenda, material para divulgar e conversa direta com a equipe.',
   cta: 'Entrar no grupo do WhatsApp'
 }
 
